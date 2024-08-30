@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Web App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+        {% if username %}
+        <h1>Welcome, {{ username }}!</h1>
+        {% endif %}
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="left-column">
+                <img src="{{ url_for('static', filename=image) }}" alt="Selected Image">
+            </div>
+            <div class="right-column">
+                <div class="info-box">{{ text }}</div>
+                
+                <!-- Form for number input -->
+                <form action="{{ url_for('process_number') }}" method="post">
+                    <label for="number">Enter a number:</label>
+                    <input type="text" id="number" name="number" required>
+                    <button type="submit">Submit</button>
+                </form>
+                
+                <!-- Display result -->
+                {% if result is not none %}
+                <div class="result-box">{{ result }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

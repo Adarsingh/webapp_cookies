@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Web App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Task 1</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="left-column">
+                <img src="{{ url_for('static', filename='images/cat_picture.jpg') }}" alt="Image 1">
+                <img src="{{ url_for('static', filename='images/dog_picture.jpg') }}" alt="Image 2">
+                <img src="{{ url_for('static', filename='images/cat_picture.jpg') }}" alt="Image 3">
+            </div>
+            <div class="right-column">
+                <div class="info-box">This is trial page.</div>
+                <div class="info-box">Not ready for deployment.</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
