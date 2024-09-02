@@ -48,7 +48,7 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      url: ${faq-bot-web-app-cookies-gpcmgdcvh5d0ezb0.eastasia-01.azurewebsites.net}
     
     steps:
       - name: Download artifact from build job
